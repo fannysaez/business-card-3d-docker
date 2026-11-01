@@ -1,0 +1,12 @@
+services:
+  frontend:
+    build:
+      context: ../business-card-3d-frontend
+      dockerfile: ../business-card-3d-docker/Dockerfile
+      target: dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../business-card-3d-frontend:/app
+      - /app/node_modules
+    command: npm run dev
